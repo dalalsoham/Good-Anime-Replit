@@ -1,6 +1,6 @@
 export default interface Anime {
   titles: {
-    original: string | null;
+    original: string;
     canonical: string | null;
     translated: string | null;
   };
