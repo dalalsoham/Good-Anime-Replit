@@ -4,9 +4,9 @@ const props = defineProps<{
   categories: AnimeType["categories"];
 }>();
 
-const genres = props.categories.nodes.map(
-  (n) => n.title[Object.keys(n.title)[0]]
-);
+const genres = props.categories.nodes
+  .filter((n) => n)
+  .map((n) => n.title[Object.keys(n.title)[0]]);
 </script>
 
 <template>

@@ -15,10 +15,9 @@ const epLength = moment.duration(props.length, "seconds").humanize();
     <h3>Episodes Information</h3>
     <p>
       {{ titles.translated || titles.canonical }} has
-      <strong>{{ count }} episodes</strong>. Average Episode length is
-      <strong>{{ epLength }}</strong
-      >.
+      <strong>{{ count }} episode{{ count > 1 ? "s" : "" }} </strong>.
     </p>
+    <p>Average Episode length is <strong v-text="epLength" />.</p>
   </div>
 </template>
 
