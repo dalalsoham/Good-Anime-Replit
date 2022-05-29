@@ -4,7 +4,15 @@ import { useQuery } from "@vue/apollo-composable";
 import { onMounted, ref } from "vue";
 import AnimeLoader from "@/components/Loader.vue";
 import AnimePage from "@/components/Anime/index.vue";
-const { result, loading, refetch } = useQuery(animeQuery);
+import { useHistory } from "@/stores/history";
+const history = useHistory();
+
+const { result, loading, refetch, onResult } = useQuery(animeQuery);
+
+onResult((qResult) => {
+  if (history.checkHistory(qResult.data.randomMedia.id)) refetch();
+  else history.addToHistory(qResult.data.randomMedia.id);
+});
 
 const int = ref(setInterval(refetch, 30000));
 

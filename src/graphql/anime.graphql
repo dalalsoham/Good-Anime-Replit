@@ -1,6 +1,7 @@
 query getRandomAnime {
   randomMedia(mediaType: ANIME, ageRatings: [G, PG, R]) {
     ... on Anime {
+      id
       titles {
         original
         translated

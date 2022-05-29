@@ -1,4 +1,5 @@
 export default interface Anime {
+  id: number;
   titles: {
     original: string;
     canonical: string | null;
@@ -29,7 +30,7 @@ export default interface Anime {
   episodeCount: number;
   episodeLength: number;
   youtubeTrailerVideoId: string | null;
-  streamingLings: {
+  streamingLinks: {
     nodes: {
       streamer: {
         siteName: string;

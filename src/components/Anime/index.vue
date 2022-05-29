@@ -4,6 +4,7 @@ import { onMounted } from "vue";
 import AnimeTitle from "@/components/Anime/AnimeTitle.vue";
 import AnimeGenres from "@/components/Anime/AnimeGenres.vue";
 import AnimeEpisodes from "@/components/Anime/AnimeEpisodes.vue";
+import AnimeLinks from "@/components/Anime/AnimeLinks.vue";
 const props = defineProps<{ anime: AnimeType }>();
 
 onMounted(() => {
@@ -30,6 +31,10 @@ onMounted(() => {
         :titles="anime.titles"
         :count="anime.episodeCount"
         :length="anime.episodeLength"
+      />
+      <AnimeLinks
+        :trailer="anime.youtubeTrailerVideoId"
+        :streamers="anime.streamingLinks.nodes"
       />
     </div>
     <img
