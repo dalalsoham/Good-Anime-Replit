@@ -72,4 +72,15 @@ export default {
   font-size: 1.1rem;
   margin-top: 1rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+  }
+
+  .poster-image {
+    justify-self: start;
+  }
+}
 </style>
