@@ -1,0 +1,42 @@
+query getRandomAnime {
+  randomMedia(mediaType: ANIME, ageRatings: [G, PG, R]) {
+    ... on Anime {
+      titles {
+        original
+        translated
+        canonical
+      }
+      posterImage {
+        original {
+          url
+        }
+      }
+      bannerImage {
+        original {
+          url
+        }
+      }
+      categories(first: 2000) {
+        nodes {
+          title
+        }
+      }
+      description
+      ageRating
+      ageRatingGuide
+      episodeCount
+      episodeLength
+      youtubeTrailerVideoId
+      streamingLinks(first: 5) {
+        nodes {
+          dubs
+          subs
+          streamer {
+            siteName
+          }
+          url
+        }
+      }
+    }
+  }
+}
