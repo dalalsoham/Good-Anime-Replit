@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { duration } from "moment";
+import moment from "moment";
 import type AnimeType from "@/types/anime";
-defineProps<{
+const props = defineProps<{
   titles: AnimeType["titles"];
   count: AnimeType["episodeCount"];
   length: AnimeType["episodeLength"];
 }>();
+
+const epLength = moment.duration(props.length, "seconds").humanize();
 </script>
 
 <template>
@@ -14,7 +16,7 @@ defineProps<{
     <p>
       {{ titles.translated || titles.canonical }} has
       <strong>{{ count }} episodes</strong>. Average Episode length is
-      <strong>{{ duration(length, "seconds").humanize() }}</strong
+      <strong>{{ epLength }}</strong
       >.
     </p>
   </div>
