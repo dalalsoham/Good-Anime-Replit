@@ -44,13 +44,14 @@
 
 <style>
 body {
+  background-position: top;
+  background-size: cover;
   background-image: url("/images/indexbg.jpg");
 }
 
 @media only screen and (max-width: 640px) {
   body {
-    background-size: cover;
-    background: url("/images/indexbg_small.jpg") no-repeat center;
+    background: url("/images/indexbg_small.jpg") no-repeat contain;
   }
 }
 </style>
